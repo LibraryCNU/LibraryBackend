@@ -11,8 +11,8 @@ class StudentDataSource:
         return query
 
     def get_student(self, id: str) -> StudentModel:
-        query = self.__database.db.query(StudentModel).filter(StudentModel.id == id)
-        return query[0]
+        query = self.__database.db.query(StudentModel).filter(StudentModel.id == id).first()
+        return query
 
     def add_student(
             self, id: str, password: str, student_id: str, department: str, name: str, is_attending: bool, qr: str

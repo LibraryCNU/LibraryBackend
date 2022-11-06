@@ -13,5 +13,5 @@ class StudentRepository(metaclass=ABCMeta):
         pass
 
     @abstractmethod
-    def get_student_info(self, session: str) -> Student:
+    def get_student_info(self, id: str) -> Student:
         pass

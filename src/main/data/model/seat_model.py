@@ -26,3 +26,14 @@ class SeatModel(Base):
         self.end_time = end_time
         self.can_reserve = can_reserve
         self.is_favorite = is_favorite
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "place": self.place,
+            "plug_existence": self.plug_existence,
+            "start_time": self.start_time,
+            "end_time": self.end_time,
+            "can_reserve": self.can_reserve,
+            "is_favorite": self.is_favorite,
+        }

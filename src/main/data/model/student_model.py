@@ -23,3 +23,14 @@ class StudentModel(Base):
         self.name = name
         self.is_attending = is_attending
         self.qr = qr
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "password": self.password,
+            "student_id": self.student_id,
+            "department": self.department,
+            "name": self.name,
+            "is_attending": self.is_attending,
+            "qr": self.qr,
+        }

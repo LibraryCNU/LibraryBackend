@@ -13,8 +13,8 @@ class SeatDataSource:
         return query
 
     def get_seat(self, id: int) -> SeatModel:
-        query = self.__database.db.query(SeatModel).filter(SeatModel.id == id)
-        return query[0]
+        query = self.__database.db.query(SeatModel).filter(SeatModel.id == id).first()
+        return query
 
     def add_seat(
             self, id: int, place: str, plug_existence: bool, start_time: datetime, end_time: datetime,

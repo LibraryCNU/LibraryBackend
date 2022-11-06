@@ -11,8 +11,8 @@ class BookDataSource:
         return query
 
     def get_book(self, name: str) -> BookModel:
-        query = self.__database.db.query(BookModel).filter(BookModel.name == name)
-        return query[0]
+        query = self.__database.db.query(BookModel).filter(BookModel.name == name).first()
+        return query
 
     def add_book(
             self, author: str, name: str, publish: str, isbn: str, language: str, picture: str, is_favorite: bool
