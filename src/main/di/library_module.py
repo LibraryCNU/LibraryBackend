@@ -37,7 +37,8 @@ class LibraryModule:
         # Student UseCase
         self.login_usecase: LoginUseCase = LoginUseCase(repository=self.__student_repository)
         self.logout_usecase: LogoutUseCase = LogoutUseCase(repository=self.__student_repository)
-        self.get_student_info_usecase: GetStudentInfoUseCase = GetStudentInfoUseCase(repository=self.__student_repository)
+        self.get_student_info_usecase: GetStudentInfoUseCase = GetStudentInfoUseCase(
+                                                                            repository=self.__student_repository)
 
         # Seat UseCase
         self.get_all_seat_info_usecase: GetAllSeatInfoUseCase = GetAllSeatInfoUseCase(repository=self.__seat_repository)
@@ -45,8 +46,8 @@ class LibraryModule:
         self.reserve_seat_usecase: ReserveSeatUseCase = ReserveSeatUseCase(repository=self.__seat_repository)
         self.cancel_seat_usecase: CancelSeatUseCase = CancelSeatUseCase(repository=self.__seat_repository)
         self.extend_seat_usecase: ExtendSeatUseCase = ExtendSeatUseCase(repository=self.__seat_repository)
-        self.get_reservation_info_usecase: GetReservationInfoUseCase = \
-                                                        GetReservationInfoUseCase(repository=self.__seat_repository)
+        self.get_reservation_info_usecase: GetReservationInfoUseCase = GetReservationInfoUseCase(
+                                                                                repository=self.__seat_repository)
 
         # Book UseCase
         self.search_usecase: SearchUseCase = SearchUseCase(repository=self.__book_repository)

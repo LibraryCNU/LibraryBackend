@@ -36,15 +36,15 @@ class SeatDataSource:
             updated_data = {}
             if place:
                 updated_data[SeatModel.place] = place
-            if plug_existence:
+            if plug_existence is not None:
                 updated_data[SeatModel.plug_existence] = plug_existence
             if start_time:
                 updated_data[SeatModel.start_time] = start_time
             if end_time:
                 updated_data[SeatModel.end_time] = end_time
-            if can_reserve:
+            if can_reserve is not None:
                 updated_data[SeatModel.can_reserve] = can_reserve
-            if is_favorite:
+            if is_favorite is not None:
                 updated_data[SeatModel.is_favorite] = is_favorite
             self.__database.db.query(SeatModel).filter(SeatModel.id == id).update(updated_data)
             self.__database.db.commit()
