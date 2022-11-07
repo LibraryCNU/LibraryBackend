@@ -8,7 +8,7 @@ Base = declarative_base()
 class Database:
     __instance = None
     # TODO __connect_info = "write your db connection information"
-    __connect_info = "mariadb+pymysql://root2:1q2w3e4r@122.32.102.102:46577/library"
+    __connect_info = ""
 
     @classmethod
     def get_instance(cls):  # Singleton
