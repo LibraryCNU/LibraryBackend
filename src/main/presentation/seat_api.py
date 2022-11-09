@@ -12,8 +12,8 @@ class GetAllSeatInfo(Resource):
             seats = self.sdk.library_module.get_all_seat_info_usecase.execute()
             seat_list = []
             for seat in seats:
-                seat.start_time = seat.start_time.strftime("%Y/%m/%d-%H:%M:%S")
-                seat.end_time = seat.end_time.strftime("%Y/%m/%d-%H:%M:%S")
+                seat.start_time = seat.start_time.strftime("%Y-%m-%dT%H:%M:%S")
+                seat.end_time = seat.end_time.strftime("%Y-%m-%dT%H:%M:%S")
                 seat_list.append(seat.to_dict())
 
             return seat_list
@@ -35,8 +35,8 @@ class GetSeatInfo(Resource):
             _id = args['id']
 
             seat = self.sdk.library_module.get_seat_info_usecase.execute(id=_id)
-            seat.start_time = seat.start_time.strftime("%Y/%m/%d-%H:%M:%S")
-            seat.end_time = seat.end_time.strftime("%Y/%m/%d-%H:%M:%S")
+            seat.start_time = seat.start_time.strftime("%Y-%m-%dT%H:%M:%S")
+            seat.end_time = seat.end_time.strftime("%Y-%m-%dT%H:%M:%S")
 
             return seat.to_dict()
 
@@ -125,8 +125,8 @@ class GetReservationInfo(Resource):
             _place = args['place']
 
             reservation_info = self.sdk.library_module.get_reservation_info_usecase.execute(id=_id, place=_place)
-            reservation_info['start_time'] = reservation_info['start_time'].strftime("%Y/%m/%d-%H:%M:%S")
-            reservation_info['end_time'] = reservation_info['end_time'].strftime("%Y/%m/%d-%H:%M:%S")
+            reservation_info['start_time'] = reservation_info['start_time'].strftime("%Y-%m-%dT%H:%M:%S")
+            reservation_info['end_time'] = reservation_info['end_time'].strftime("%Y-%m-%dT%H:%M:%S")
 
             return reservation_info
 
