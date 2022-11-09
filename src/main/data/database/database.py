@@ -17,7 +17,7 @@ class Database:
         return cls.__instance
 
     def __init__(self):
-        self.engine = create_engine(self.__connect_info, echo=True)
+        self.engine = create_engine(self.__connect_info, echo=True, pool_recycle=1800)
         SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=self.engine)
         self.db = SessionLocal()
         Base.metadata.create_all(self.engine)
